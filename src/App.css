@@ -1,38 +1,248 @@
+/* App.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.App {
+  text-align: center;
+  background-color: black;
+  color: pink;
+}
+
+.dark-mode {
+  background-color: #000;
+  color: #fff;
+}
+
+nav {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: black;
+  padding: 20px;
+}
+
+.logo {
+  margin-right: 20px;
+}
+
+.logo img {
+  width: 50px;
+  height: 50px;
+}
+
+.nav-links {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 10px;
+}
+
+.nav-links li a {
+  color: pink;
+  text-decoration: none;
+}
+
+.dark-mode-button {
+  background: none;
+  border: none;
+  color: pink;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.dark-mode-button:focus {
+  outline: none;
+}
+
+.dark-mode-button .sun-icon,
+.dark-mode-button .moon-icon {
+  vertical-align: middle;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.intro {
+  text-align: center;
+}
+
+.Skills,
+.Projects {
+  padding: 20px;
+}
+
+.Project-card {
+  border: 1px solid pink;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+footer {
+  background-color: black;
+  padding: 20px;
+}
+
+footer p {
+  color: pink;
+}
+
+@media screen and (max-width: 600px) {
+  header h1 {
+    font-size: 24px;
+  }
+
+  .Skills,
+  .Projects {
+    padding: 10px;
+  }
+
+  .Project-card {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+
+/* App.css */
+
+/* App.css */
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+/* ...existing styles... */
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
+  background-color: black;
+  padding: 20px;
+}
+
+.logo img {
+  height: 40px;
+  width: auto;
+}
+
+.menu-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.menu-line {
+  width: 25px;
+  height: 3px;
+  background-color: pink;
+  margin: 5px 0;
+  transition: transform 0.3s ease;
+}
+
+.open .menu-line:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.open .menu-line:nth-child(2) {
+  opacity: 0;
+}
+
+.open .menu-line:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-links {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.nav-links li {
+  margin: 0 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.nav-links li a {
+  color: pink;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: lightpink;
+}
+
+.dark-mode-icon {
+  margin-right: 5px;
+}
+
+.dark-mode-button {
+  background: none;
+  border: none;
+  color: pink;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.dark-mode-button:focus {
+  outline: none;
+}
+
+.dark-mode-button:hover {
+  color: lightpink;
+}
+
+@media screen and (max-width: 600px) {
+  .menu-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    padding: 20px;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  .nav-links.open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  .nav-links li a {
+    color: pink;
   }
 }
